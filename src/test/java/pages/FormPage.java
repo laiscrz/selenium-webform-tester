@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class FormPage extends BasePage {
 
@@ -10,7 +11,7 @@ public class FormPage extends BasePage {
     private final By submitButton = By.cssSelector(".btn.btn-outline-primary.mt-3");
     public final By indexLink = By.linkText("Return to index");
     private final By successMessage = By.id("message");
-    private final By dropdown = By.id("my-options");
+    private final By inputFieldDropdown = By.name("my-datalist");
     private final By checkbox1 = By.id("my-check-1");
     private final By checkbox2 = By.id("my-check-2");
 
@@ -30,10 +31,13 @@ public class FormPage extends BasePage {
         click(submitButton);
     }
 
-    public void selectDropdownOption(String option) {
-        isVisible(dropdown);
-        driver.findElement(dropdown).sendKeys(option);
+    public void datalistDropdownOption(String option) {
+        /*WebElement inputElement = driver.findElement(inputFieldDropdown);
+        inputElement.clear();
+        inputElement.sendKeys(option);*/
+        driver.findElement(inputFieldDropdown).sendKeys(option);
     }
+
 
     public void getSuccessMessage() {
         driver.findElement(successMessage).getText();

@@ -60,7 +60,7 @@ public class FormSteps {
 
     @Quando("eu seleciono um item no dropdown")
     public void eu_seleciono_um_item_no_dropdown() {
-        formPage.selectDropdownOption("San Francisco");
+        formPage.datalistDropdownOption("San Francisco");
     }
 
     @Quando("eu marco as duas checkboxes")
