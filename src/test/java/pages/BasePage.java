@@ -15,9 +15,9 @@ public class BasePage extends Setup {
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    protected boolean isVisible (By locator) {
-        waitElement(locator);
-        return driver.findElement(locator).isDisplayed();
+    protected boolean isVisible(By locator) {
+        WebElement element = waitElement(locator);
+        return element.isDisplayed();
     }
 
     protected void fillInput (By locator, String text) {
@@ -29,4 +29,6 @@ public class BasePage extends Setup {
         isVisible(locator);
         driver.findElement(locator).click();
     }
+
+
 }
