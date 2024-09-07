@@ -16,7 +16,7 @@ Funcionalidade: Submissão de Formulário
         Quando eu deixo o campo "text" vazio
         E eu deixo o campo "password" vazio
         E eu submeto o formulário
-        Então o formulário deve exibir uma mensagem de erro
+        Então eu devo ver uma mensagem de sucesso
 
     @FormIndex
     Cenario: Retornar a página de index
