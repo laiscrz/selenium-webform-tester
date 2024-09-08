@@ -5,8 +5,8 @@ Funcionalidade: Submissão de Formulário
     @FormInputPassword @SmokeTest
     Cenario: Submeter formulário com Text Input e Password preenchidos
         Dado que eu estou na página do formulário
-        Quando eu preencho o campo "text"
-        E o campo de "password"
+        Quando eu preencho o campo de texto com o valor fornecido
+        E eu preencho o campo de senha com o valor fornecido
         E eu submeto o formulário
         Então eu devo ver uma mensagem de sucesso
 

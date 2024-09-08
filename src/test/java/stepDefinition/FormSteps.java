@@ -14,6 +14,11 @@ public class FormSteps {
     // Instância da página de formulário para interações com a página
     private final FormPage formPage = new FormPage();
 
+    // Valores padrão para campos de input e opções
+    private static final String VALUE_TEXT = "aluno";
+    private static final String VALUE_PASSWORD = "senha123";
+    private static final String VALUE_DROPDOWN_OPTION = "San Francisco";
+
     /**
      * Navega para a página do formulário antes de iniciar o teste.
      */
@@ -23,23 +28,19 @@ public class FormSteps {
     }
 
     /**
-     * Preenche o campo de texto com o valor fornecido.
-     *
-     * @param campoText O texto a ser preenchido no campo de texto.
+     * Preenche o campo de texto com o valor padrão fornecido.
      */
-    @Quando("eu preencho o campo {string}")
-    public void eu_preencho_o_campo(String campoText) {
-        formPage.fillTextField(campoText); // Preenche o campo de texto com o valor fornecido
+    @Quando("eu preencho o campo de texto com o valor fornecido")
+    public void eu_preencho_o_campo_text() {
+        formPage.fillTextField(VALUE_TEXT); // Preenche o campo de texto com o valor fornecido
     }
 
     /**
-     * Preenche o campo de senha com o valor fornecido.
-     *
-     * @param password A senha a ser preenchida no campo de senha.
+     * Preenche o campo de senha com o valor padrão fornecido.
      */
-    @Quando("o campo de {string}")
-    public void o_campo_de(String password) {
-        formPage.fillPasswordField(password); // Preenche o campo de senha com o valor fornecido
+    @Quando("eu preencho o campo de senha com o valor fornecido")
+    public void o_campo_senha() {
+        formPage.fillPasswordField(VALUE_PASSWORD); // Preenche o campo de senha com o valor fornecido
     }
 
     /**
@@ -47,7 +48,7 @@ public class FormSteps {
      */
     @Quando("eu submeto o formulário")
     public void eu_submeto_o_formulario() {
-        formPage.submitForm(); // Submete o formulário
+        formPage.submitForm(); // Submete o formulário clicando no botão de envio
     }
 
     /**
@@ -77,7 +78,7 @@ public class FormSteps {
      */
     @Entao("eu devo ver a mesma mensagem de sucesso")
     public void eu_devo_ver_a_mesma_mensagem_de_sucesso() {
-       formPage.getSuccessMessage(); // Obtém e verifica o texto da mensagem de sucesso
+        formPage.getSuccessMessage(); // Obtém e verifica o texto da mensagem de sucesso
     }
 
     /**
@@ -85,7 +86,7 @@ public class FormSteps {
      */
     @Quando("eu clico no link para retornar à página de index")
     public void eu_clico_no_link_para_retornar_a_pagina_de_index() {
-        formPage.clickIndexLink(); // Clica no link para retornar à página de index
+        formPage.clickIndexLink(); // Clica no link para retornar à página de índice
     }
 
     /**
@@ -93,7 +94,7 @@ public class FormSteps {
      */
     @Entao("eu devo ser redirecionado para a página de index")
     public void eu_devo_ser_redirecionado_para_a_pagina_de_index() {
-        formPage.isOnCorrectUrl(); // Verifica se a URL atual é a esperada para a página de index
+        formPage.isOnCorrectUrl(); // Verifica se a URL atual é a esperada para a página de índice
     }
 
     /**
@@ -101,7 +102,7 @@ public class FormSteps {
      */
     @Quando("eu seleciono um item no dropdown")
     public void eu_seleciono_um_item_no_dropdown() {
-        formPage.datalistDropdownOption("San Francisco"); // Seleciona a opção "San Francisco" no dropdown
+        formPage.datalistDropdownOption(VALUE_DROPDOWN_OPTION); // Seleciona a opção padrão "San Francisco" no dropdown
     }
 
     /**
