@@ -69,8 +69,6 @@ public class FormPage extends BasePage {
 
     /**
      * Obtém o texto da mensagem de sucesso após a submissão do formulário.
-     *
-     * @return O texto da mensagem de sucesso.
      */
     public void getSuccessMessage() {
         // Obtém e retorna o texto da mensagem de sucesso
