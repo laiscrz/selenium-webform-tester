@@ -9,13 +9,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
  * A classe Setup é responsável por gerenciar a criação e o encerramento da instância do WebDriver para testes automatizados.
  */
 public class Setup {
-    // private (no code do professor)
 
-    /** 
-     * O WebDriver protegido (protected) permite que subclasses acessem, mas outras classes fora do pacote não.
-     * Ele será usado para interagir com o navegador.
+    /**
+     * Instância pública do WebDriver para interação com o navegador.
+     * Ela é utilizada para enviar comandos ao navegador,
+     * como abrir páginas, clicar em elementos e preencher formulários.
      */
-    protected static WebDriver driver;
+    public static WebDriver driver;
 
     /**
      * Método estático para criar uma instância do WebDriver com as opções configuradas.
