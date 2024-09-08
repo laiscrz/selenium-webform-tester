@@ -74,14 +74,6 @@ public class FormSteps {
     }
 
     /**
-     * Verifica se a mesma mensagem de sucesso é exibida após a submissão do formulário.
-     */
-    @Entao("eu devo ver a mesma mensagem de sucesso")
-    public void eu_devo_ver_a_mesma_mensagem_de_sucesso() {
-        formPage.getSuccessMessage(); // Obtém e verifica o texto da mensagem de sucesso
-    }
-
-    /**
      * Clica no link para retornar à página de índice.
      */
     @Quando("eu clico no link para retornar à página de index")
