@@ -3,13 +3,14 @@ package stepDefinition;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+import pages.BasePage;
 import pages.FormPage;
 
 /**
  * A classe FormSteps define os passos do Cucumber para os cenários relacionados ao formulário.
  * Cada método mapeia uma etapa do cenário de teste para interações com a página do formulário.
  */
-public class FormSteps {
+public class FormSteps extends BasePage {
 
     // Instância da página de formulário para interações com a página
     FormPage formPage = new FormPage();
@@ -32,7 +33,8 @@ public class FormSteps {
      */
     @Quando("eu preencho o campo de texto com o valor fornecido")
     public void eu_preencho_o_campo_text() {
-        formPage.fillTextField(VALUE_TEXT); // Preenche o campo de texto com o valor fornecido
+        // formPage.fillTextField(VALUE_TEXT);
+        fillInput(formPage.textField,VALUE_TEXT); // Preenche o campo de texto com o valor fornecido
     }
 
     /**
@@ -40,7 +42,7 @@ public class FormSteps {
      */
     @Quando("eu preencho o campo de senha com o valor fornecido")
     public void o_campo_senha() {
-        formPage.fillPasswordField(VALUE_PASSWORD); // Preenche o campo de senha com o valor fornecido
+        fillInput(formPage.passwordField,VALUE_PASSWORD); // Preenche o campo de senha com o valor fornecido
     }
 
     /**
@@ -48,7 +50,7 @@ public class FormSteps {
      */
     @Quando("eu submeto o formulário")
     public void eu_submeto_o_formulario() {
-        formPage.clickElement(formPage.submitButton); // Submete o formulário clicando no botão de envio
+        click(formPage.submitButton); // Submete o formulário clicando no botão de envio
     }
 
     /**
@@ -67,9 +69,9 @@ public class FormSteps {
     @Quando("eu deixo o campo {string} vazio")
     public void eu_deixo_o_campo_vazio(String campo) {
         if (campo.equals("text")) {
-            formPage.fillTextField(""); // Deixa o campo de texto vazio
+            fillInput(formPage.textField,""); // Deixa o campo de texto vazio
         } else if (campo.equals("password")) {
-            formPage.fillPasswordField(""); // Deixa o campo de senha vazio
+            fillInput(formPage.passwordField,""); // Deixa o campo de senha vazio
         }
     }
 
@@ -78,7 +80,7 @@ public class FormSteps {
      */
     @Quando("eu clico no link para retornar à página de index")
     public void eu_clico_no_link_para_retornar_a_pagina_de_index() {
-        formPage.clickElement(formPage.indexLink); // Clica no link para retornar à página de índice
+        click(formPage.indexLink); // Clica no link para retornar à página de índice
     }
 
     /**
@@ -94,7 +96,7 @@ public class FormSteps {
      */
     @Quando("eu seleciono um item no dropdown")
     public void eu_seleciono_um_item_no_dropdown() {
-        formPage.datalistDropdownOption(VALUE_DROPDOWN_OPTION); // Seleciona a opção padrão "San Francisco" no dropdown
+        fillInput(formPage.inputFieldDropdown,VALUE_DROPDOWN_OPTION); // Seleciona a opção padrão "San Francisco" no dropdown
     }
 
     /**
@@ -102,7 +104,7 @@ public class FormSteps {
      */
     @Quando("eu marco as duas checkboxes")
     public void eu_marco_as_duas_checkboxes() {
-        formPage.clickElement(formPage.checkbox1); // Marca o primeiro checkbox
-        formPage.clickElement(formPage.checkbox2); // Marca o segundo checkbox
+        click(formPage.checkbox1); // Marca o primeiro checkbox
+        click(formPage.checkbox2); // Marca o segundo checkbox
     }
 }

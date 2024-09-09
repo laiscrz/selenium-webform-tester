@@ -29,54 +29,12 @@ public class FormPage extends BasePage {
     }
 
     /**
-     * Preenche o campo de texto com o valor fornecido.
-     *
-     * @param text O texto a ser preenchido no campo de texto.
-     */
-    public void fillTextField(String text) {
-        fillInput(textField, text);
-    }
-
-    /**
-     * Preenche o campo de senha com o valor fornecido.
-     *
-     * @param password A senha a ser preenchida no campo de senha.
-     */
-    public void fillPasswordField(String password) {
-        fillInput(passwordField, password);
-    }
-
-    /**
-     * Preenche o campo de input do dropdown (datalist) com a opção fornecida.
-     *
-     * @param option A opção a ser preenchida no campo dropdown.
-     */
-    public void datalistDropdownOption(String option) {
-        /*WebElement inputElement = driver.findElement(inputFieldDropdown);
-        inputElement.clear();
-        inputElement.sendKeys(option);*/
-        
-        // Localiza o elemento de dropdown (datalist) e insere a opção fornecida
-        driver.findElement(inputFieldDropdown).sendKeys(option);
-    }
-
-    /**
      * Obtém o texto da mensagem de sucesso após a submissão do formulário.
      */
     public void getSuccessMessage() {
         // Obtém e retorna o texto da mensagem de sucesso
         driver.findElement(successMessage).getText();
     }
-
-    /**
-     * Clica em um  submeter o formulário, link ou checkbox baseado no localizador fornecido.
-     *
-     * @param locator O localizador do elemento a ser clicado.
-     */
-    public void clickElement(By locator) {
-        click(locator);
-    }
-
 
     /**
      * Verifica se a URL atual do navegador corresponde à URL esperada.
