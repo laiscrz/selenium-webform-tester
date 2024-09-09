@@ -11,14 +11,14 @@ import org.openqa.selenium.By;
 public class FormPage extends BasePage {
 
     // localizadores (class, ids, names e etc)
-    private final By textField = By.name("my-text");
-    private final By passwordField = By.name("my-password");
-    private final By submitButton = By.cssSelector(".btn.btn-outline-primary.mt-3");
+    public final By textField = By.name("my-text");
+    public final By passwordField = By.name("my-password");
+    public final By submitButton = By.cssSelector(".btn.btn-outline-primary.mt-3");
     public final By indexLink = By.linkText("Return to index");
-    private final By successMessage = By.id("message");
-    private final By inputFieldDropdown = By.name("my-datalist");
-    private final By checkbox1 = By.id("my-check-1");
-    private final By checkbox2 = By.id("my-check-2");
+    public final By successMessage = By.id("message");
+    public final By inputFieldDropdown = By.name("my-datalist");
+    public final By checkbox1 = By.id("my-check-1");
+    public final By checkbox2 = By.id("my-check-2");
 
     /**
      * Navega para a página de formulário.
@@ -47,13 +47,6 @@ public class FormPage extends BasePage {
     }
 
     /**
-     * Submete o formulário clicando no botão de envio.
-     */
-    public void submitForm() {
-        click(submitButton);
-    }
-
-    /**
      * Preenche o campo de input do dropdown (datalist) com a opção fornecida.
      *
      * @param option A opção a ser preenchida no campo dropdown.
@@ -76,25 +69,14 @@ public class FormPage extends BasePage {
     }
 
     /**
-     * Clica no link para retornar à página inicial (index).
+     * Clica em um  submeter o formulário, link ou checkbox baseado no localizador fornecido.
+     *
+     * @param locator O localizador do elemento a ser clicado.
      */
-    public void clickIndexLink() {
-        click(indexLink);
+    public void clickElement(By locator) {
+        click(locator);
     }
 
-    /**
-     * Seleciona o primeiro checkbox.
-     */
-    public void selectCheckbox1() {
-        click(checkbox1);
-    }
-
-    /**
-     * Seleciona o segundo checkbox.
-     */
-    public void selectCheckbox2() {
-        click(checkbox2);
-    }
 
     /**
      * Verifica se a URL atual do navegador corresponde à URL esperada.

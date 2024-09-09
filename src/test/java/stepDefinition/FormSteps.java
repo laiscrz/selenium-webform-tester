@@ -12,7 +12,7 @@ import pages.FormPage;
 public class FormSteps {
 
     // Instância da página de formulário para interações com a página
-    private final FormPage formPage = new FormPage();
+    FormPage formPage = new FormPage();
 
     // Valores padrão para campos de input e opções
     private static final String VALUE_TEXT = "aluno";
@@ -48,7 +48,7 @@ public class FormSteps {
      */
     @Quando("eu submeto o formulário")
     public void eu_submeto_o_formulario() {
-        formPage.submitForm(); // Submete o formulário clicando no botão de envio
+        formPage.clickElement(formPage.submitButton); // Submete o formulário clicando no botão de envio
     }
 
     /**
@@ -78,7 +78,7 @@ public class FormSteps {
      */
     @Quando("eu clico no link para retornar à página de index")
     public void eu_clico_no_link_para_retornar_a_pagina_de_index() {
-        formPage.clickIndexLink(); // Clica no link para retornar à página de índice
+        formPage.clickElement(formPage.indexLink); // Clica no link para retornar à página de índice
     }
 
     /**
@@ -102,7 +102,7 @@ public class FormSteps {
      */
     @Quando("eu marco as duas checkboxes")
     public void eu_marco_as_duas_checkboxes() {
-        formPage.selectCheckbox1(); // Marca o primeiro checkbox
-        formPage.selectCheckbox2(); // Marca o segundo checkbox
+        formPage.clickElement(formPage.checkbox1); // Marca o primeiro checkbox
+        formPage.clickElement(formPage.checkbox2); // Marca o segundo checkbox
     }
 }
