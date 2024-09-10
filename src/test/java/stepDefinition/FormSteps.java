@@ -23,88 +23,77 @@ public class FormSteps extends BasePage {
     /**
      * Navega para a página do formulário antes de iniciar o teste.
      */
-    @Dado("que eu estou na página do formulário")
-    public void que_eu_estou_na_pagina_do_formulario() {
+    @Dado("que estou na página do formulário")
+    public void que_estou_na_pagina_do_formulario() {
         formPage.isOnFormPage(); // Abre a página do formulário
     }
 
     /**
-     * Preenche o campo de texto com o valor padrão fornecido.
+     * Preenche o campo de texto e senha com o valor padrão fornecido.
      */
-    @Quando("eu preencho o campo de texto com o valor fornecido")
-    public void eu_preencho_o_campo_text() {
-        // formPage.fillTextField(VALUE_TEXT);
-        fillInput(formPage.textField,VALUE_TEXT); // Preenche o campo de texto com o valor fornecido
+    @Quando("preencho o campo de texto e senha com os valores fornecidos")
+    public void preencho_o_campo_de_texto_e_senha_com_os_valores_fornecidos() {
+        fillInput(formPage.textField, VALUE_TEXT); // Preenche o campo de texto com o valor fornecido
+        fillInput(formPage.passwordField, VALUE_PASSWORD); // Preenche o campo de senha com o valor fornecido
     }
 
-    /**
-     * Preenche o campo de senha com o valor padrão fornecido.
-     */
-    @Quando("eu preencho o campo de senha com o valor fornecido")
-    public void o_campo_senha() {
-        fillInput(formPage.passwordField,VALUE_PASSWORD); // Preenche o campo de senha com o valor fornecido
-    }
 
     /**
      * Submete o formulário clicando no botão de submissão.
      */
-    @Quando("eu submeto o formulário")
-    public void eu_submeto_o_formulario() {
+    @Quando("submeto o formulário")
+    public void submeto_o_formulario() {
         click(formPage.submitButton); // Submete o formulário clicando no botão de envio
     }
 
     /**
      * Verifica se a mensagem de sucesso é exibida após a submissão do formulário.
      */
-    @Entao("eu devo ver uma mensagem de sucesso")
-    public void eu_devo_ver_uma_mensagem_de_sucesso() {
+    @Entao("devo ver uma mensagem de sucesso")
+    public void devo_ver_uma_mensagem_de_sucesso() {
         formPage.getSuccessMessage(); // Obtém e verifica o texto da mensagem de sucesso
     }
 
     /**
      * Deixa o campo especificado vazio.
-     *
-     * @param campo O tipo de campo a ser deixado vazio (text ou password).
      */
-    @Quando("eu deixo o campo {string} vazio")
-    public void eu_deixo_o_campo_vazio(String campo) {
-        if (campo.equals("text")) {
-            fillInput(formPage.textField,""); // Deixa o campo de texto vazio
-        } else if (campo.equals("password")) {
-            fillInput(formPage.passwordField,""); // Deixa o campo de senha vazio
-        }
+    @Quando("deixo o campo texto e senha vazio")
+    public void deixo_o_campo_vazio() {
+        fillInput(formPage.textField,"");
+        fillInput(formPage.passwordField, "");
     }
 
     /**
      * Clica no link para retornar à página de índice.
      */
-    @Quando("eu clico no link para retornar à página de index")
-    public void eu_clico_no_link_para_retornar_a_pagina_de_index() {
+    @Quando("clico no link para retornar à página de index")
+    public void clico_no_link_para_retornar_a_pagina_de_index() {
         click(formPage.indexLink); // Clica no link para retornar à página de índice
     }
 
     /**
      * Verifica se o usuário foi redirecionado para a página de índice.
      */
-    @Entao("eu devo ser redirecionado para a página de index")
-    public void eu_devo_ser_redirecionado_para_a_pagina_de_index() {
+    @Entao("devo ser redirecionado para a página de index")
+    public void devo_ser_redirecionado_para_a_pagina_de_index() {
         formPage.isOnCorrectUrl(); // Verifica se a URL atual é a esperada para a página de índice
     }
 
     /**
      * Seleciona um item no dropdown.
      */
-    @Quando("eu seleciono um item no dropdown")
-    public void eu_seleciono_um_item_no_dropdown() {
+    @Quando("seleciono um item no dropdown")
+    public void seleciono_um_item_no_dropdown() {
         fillInput(formPage.inputFieldDropdown,VALUE_DROPDOWN_OPTION); // Seleciona a opção padrão "San Francisco" no dropdown
     }
 
     /**
      * Marca as duas checkboxes na página.
      */
-    @Quando("eu marco as duas checkboxes")
-    public void eu_marco_as_duas_checkboxes() {
+    @Quando("marco as duas checkboxes")
+    public void marco_as_duas_checkboxes() {
         click(formPage.checkbox1); // Marca o primeiro checkbox
         click(formPage.checkbox2); // Marca o segundo checkbox
     }
+
 }
