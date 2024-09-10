@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import pages.BasePage;
@@ -41,7 +42,7 @@ public class FormSteps extends BasePage {
     /**
      * Submete o formulário clicando no botão de submissão.
      */
-    @Quando("submeto o formulário")
+    @E("submeto o formulário")
     public void submeto_o_formulario() {
         click(formPage.submitButton); // Submete o formulário clicando no botão de envio
     }
