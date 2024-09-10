@@ -16,7 +16,7 @@ public class FormSteps extends BasePage {
     FormPage formPage = new FormPage();
 
     // Valores padrão para campos de input e opções
-    private static final String VALUE_TEXT = "aluno";
+    private static final String VALUE_TEXT = "user";
     private static final String VALUE_PASSWORD = "senha123";
     private static final String VALUE_DROPDOWN_OPTION = "San Francisco";
 
