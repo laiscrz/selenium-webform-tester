@@ -83,7 +83,6 @@ Os cenários de teste são definidos em linguagem Gherkin, facilitando a compree
 - **Java** ☕ para a implementação da lógica de automação
 - **Selenium WebDriver** 🌐 para controle do navegador
 - **Cucumber** 🥒 para a definição dos cenários de teste em Gherkin
-- **JUnit** para a execução dos testes
 - **ChromeDriver** para a interação com o navegador Google Chrome
 
 ## 🚀 Como Executar
